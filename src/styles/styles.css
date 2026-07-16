@@ -15,6 +15,8 @@ body {
     "footer" minmax(min-content, 50px)
     / 1fr;
   place-items: stretch;
+
+  background: center url(../assets/images/pet-background.png) repeat;
 }
 
 /* ================ */
@@ -30,7 +32,8 @@ body {
 
   padding: 1rem 2rem;
 
-  background-color: var(--primary-color);
+  box-shadow: 0px 10px 25px 20px var(--background-color);
+  background-color: var(--background-color);
   color: var(--text-color);
 }
 
@@ -45,8 +48,14 @@ body {
   gap: 1rem;
 }
 
+.logo__text {
+  filter: drop-shadow(3px 3px 1px var(--primary-color));
+}
+
 .logo__paw {
   height: var(--size);
+
+  fill: var(--primary-color);
 
   animation: pawWave 15s ease-out infinite;
   animation-delay: 3s;
@@ -62,8 +71,41 @@ body {
 .nav__button {
   padding: 0.3rem 1rem;
 
+  background-color: var(--primary-color);
+  color: var(--text-color);
+
+  border: 1px solid var(--text-color);
   border-radius: 15% / 50%;
-  box-shadow: 0 3px 5px black;
+  box-shadow: 3px 3px 5px var(--accent-color);
+
+
+  transition-duration: 0.2s;
+}
+
+.nav__button:hover,
+.nav__button:focus {
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px var(--accent-color);
+}
+
+.nav__theme-button:hover,
+.nav__theme-button:focus {
+  transform: scale(1.1);
+}
+
+.nav__theme-button {
+  background-color: #0000;
+  border: none;
+
+  transition-duration: 0.2s;
+}
+
+.nav__theme-svg {
+  height: calc(var(--size) * 2);
+
+  fill: var(--text-color);
+
+  pointer-events: none;
 }
 
 @keyframes pawWave {

@@ -10,6 +10,7 @@ class UIController {
     const homeButton = document.querySelector(".nav__button--home");
     const menuButton = document.querySelector(".nav__button--menu");
     const aboutButton = document.querySelector(".nav__button--about");
+    const themeButton = document.querySelector(".nav__theme-button");
 
     homeButton.addEventListener("click", () => {
       this.#pageSwitch("home");
@@ -20,6 +21,9 @@ class UIController {
     aboutButton.addEventListener("click", () => {
       this.#pageSwitch("about");
     });
+    themeButton.addEventListener("click", () => {
+      this.themeSwitch();
+    });
   }
 
   /* === public === */
@@ -27,6 +31,32 @@ class UIController {
   setDefaultPage = () => {
     this.#consoleLog("Setting default page.");
     this.#pageSwitch("home");
+  };
+
+  themeSwitch = (theme = "null") => {
+    const root = document.documentElement;
+
+    switch (theme) {
+      case "dark":
+        root.setAttribute("data-theme", "dark");
+        break;
+      case "light":
+        root.setAttribute("data-theme", "light");
+        break;
+      case "null":
+        const currTheme = root.getAttribute("data-theme");
+        root.setAttribute(
+          "data-theme",
+          (() => {
+            return currTheme === "light" ? "dark" : "light";
+          })(),
+        );
+        return;
+      default:
+        this.#consoleLog(`themeSwitch called with invalid theme ${theme}`);
+        return;
+    }
+    this.#consoleLog(`${root.getAttribute("data-theme")} theme is now set.`);
   };
 
   /* === private === */
