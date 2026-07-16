@@ -22,15 +22,15 @@ class UIController {
     });
   }
 
-  /* === public functions === */
+  /* === public === */
 
   setDefaultPage = () => {
     this.#consoleLog("Setting default page.");
-    this.#clearContent();
-    document.body.appendChild(Home());
+    this.#pageSwitch("home");
   };
 
-  /* === private functions === */
+  /* === private === */
+  #currentPage = null;
 
   #consoleLog = (msg) => {
     console.log(`[UIController] ${msg}`);
@@ -63,7 +63,10 @@ class UIController {
       this.#throwErrorLog(
         `Appending func resulted in null value for: ${where}`,
       );
+    } else if (this.#currentPage === where) {
+      this.#consoleLog("Page is already set! No action.");
     } else {
+      this.#currentPage = where;
       this.#consoleLog(`Switching to ${where}`);
       this.#clearContent();
       content.appendChild(appendingFunc());
