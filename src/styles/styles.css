@@ -10,11 +10,12 @@ body {
 body {
   display: grid;
   grid:
-    "header" minmax(min-content, 150px)
+    "header" min-content
     "content" 1fr
-    "footer" minmax(min-content, 50px)
+    "footer" min-content
     / 1fr;
   place-items: stretch;
+  gap: 2.5rem;
 
   background: center url(../assets/images/pet-background.png) repeat;
 }
@@ -78,14 +79,13 @@ body {
   border-radius: 15% / 50%;
   box-shadow: 3px 3px 5px var(--accent-color);
 
-
   transition-duration: 0.2s;
 }
 
 .nav__button:hover,
 .nav__button:focus {
   transform: scale(1.1);
-  box-shadow: 0 3px 8px var(--accent-color);
+  box-shadow: 4px 4px 3px var(--accent-color);
 }
 
 .nav__theme-button:hover,
@@ -133,6 +133,18 @@ body {
 
 #content {
   grid-area: content;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: clamp(1000px, 50vw, 600px);
+  padding: 1rem 3rem;
+
+  border: 5px solid var(--accent-color);
+  border-radius: 5% / 50%;
+  background-color: var(--primary-color);
+  box-shadow: 0 8px 12px black;
 }
 
 /* ================ */
@@ -141,4 +153,21 @@ body {
 
 #footer {
   grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  padding: 1rem 2rem;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#footer a {
+  color: var(--secondary-color);
+}
+
+#footer a:visited {
+  color: var(--accent-color);
 }
