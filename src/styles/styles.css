@@ -142,9 +142,9 @@ body {
   padding: 1rem 3rem;
 
   border: 5px solid var(--accent-color);
-  border-radius: 5% / 50%;
+  border-radius: 5% / 30%;
   background-color: var(--primary-color);
-  box-shadow: 0 8px 12px black;
+  box-shadow: 0 8px 12px black, inset 0 0 20px black;
 }
 
 /* ================ */
