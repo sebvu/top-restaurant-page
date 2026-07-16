@@ -33,7 +33,17 @@ class UIController {
     this.#pageSwitch("home");
   };
 
-  themeSwitch = (theme = "null") => {
+  setOldTheme = () => {
+    const savedTheme = localStorage.getItem(this.#THEME_STORAGE_NAME);
+
+    if (savedTheme === null) {
+      this.#consoleLog(`Saved theme is ${savedTheme}, not switching.`);
+    } else {
+      this.themeSwitch(savedTheme);
+    }
+  };
+
+  themeSwitch = (theme = "nada") => {
     const root = document.documentElement;
 
     switch (theme) {
@@ -43,23 +53,26 @@ class UIController {
       case "light":
         root.setAttribute("data-theme", "light");
         break;
-      case "null":
-        const currTheme = root.getAttribute("data-theme");
+      case "nada":
         root.setAttribute(
           "data-theme",
           (() => {
-            return currTheme === "light" ? "dark" : "light";
+            return root.getAttribute("data-theme") === "light"
+              ? "dark"
+              : "light";
           })(),
         );
-        return;
+        break;
       default:
         this.#consoleLog(`themeSwitch called with invalid theme ${theme}`);
         return;
     }
     this.#consoleLog(`${root.getAttribute("data-theme")} theme is now set.`);
+    this.#saveCurrentTheme();
   };
 
   /* === private === */
+  #THEME_STORAGE_NAME = "theme";
   #currentPage = null;
 
   #consoleLog = (msg) => {
@@ -110,11 +123,18 @@ class UIController {
       contentChildren.firstChild.remove();
     }
   };
+
+  #saveCurrentTheme = () => {
+    const currTheme = document.documentElement.getAttribute("data-theme");
+
+    localStorage.setItem(this.#THEME_STORAGE_NAME, currTheme);
+  };
 }
 
 function main() {
   const ui = new UIController();
   ui.setDefaultPage();
+  ui.setOldTheme();
 }
 
 main();
