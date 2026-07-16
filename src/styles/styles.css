@@ -29,6 +29,9 @@ body {
   gap: 1rem;
 
   padding: 1rem 2rem;
+
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .header__item {
@@ -54,6 +57,13 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.nav__button {
+  padding: 0.3rem 1rem;
+
+  border-radius: 15% / 50%;
+  box-shadow: 0 3px 5px black;
 }
 
 @keyframes pawWave {
