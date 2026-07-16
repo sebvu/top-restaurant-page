@@ -39,6 +39,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+.logo__paw {
+  height: var(--size);
+
+  animation: pawWave 15s ease-out infinite;
+  animation-delay: 3s;
 }
 
 .nav {
@@ -46,6 +54,25 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+@keyframes pawWave {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  5%,
+  15%,
+  25% {
+    transform: rotate(15deg) scale(1.1);
+  }
+  10%,
+  20% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  30%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
 }
 
 /* ================ */
