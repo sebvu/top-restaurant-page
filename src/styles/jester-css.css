@@ -162,17 +162,27 @@
 
 /* === TEXT HELPERS === */
 
-/* 
 @font-face {
-  font-family: "foo";
+  font-family: "Rampart One";
   src:
-    url("") format("woff2"),
-    url("") format("woff");
+    url("../assets/fonts/rampartone-regular-webfont.woff2") format("woff2"),
+    url("../assets/fonts/rampartone-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-*/
+
+@font-face {
+  font-family: "Goudy Bookletter 1911";
+  src:
+    url("../assets/fonts/goudybookletter1911-regular-webfont.woff2")
+      format("woff2"),
+    url("../assets/fonts/goudybookletter1911-regular-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 ._text {
   font-family:
@@ -182,12 +192,15 @@
   font-weight: normal;
 }
 
-/*
-._text._text--foo-font,
-._text ._text--foo-font {
-  --font-family: "foo"
+._text._text--header-font,
+._text ._text--header-font {
+  --font-family: "Rampart One";
 }
-*/
+
+._text._text--normal-font,
+._text ._text--normal-font {
+  --font-family: "Goudy Bookletter 1911";
+}
 
 ._text._text--bold,
 ._text ._text--bold {
