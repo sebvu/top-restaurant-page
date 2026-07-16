@@ -1,0 +1,65 @@
+/* ================ */
+/* General Styling */
+/* ================ */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid:
+    "header" minmax(min-content, 150px)
+    "content" 1fr
+    "footer" minmax(min-content, 50px)
+    / 1fr;
+  place-items: stretch;
+}
+
+/* ================ */
+/* Header Styling */
+/* ================ */
+
+#header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem 2rem;
+}
+
+.header__item {
+  flex: auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ================ */
+/* Content Styling */
+/* ================ */
+
+#content {
+  grid-area: content;
+}
+
+/* ================ */
+/* Footer Styling */
+/* ================ */
+
+#footer {
+  grid-area: footer;
+}
