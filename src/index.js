@@ -1,7 +1,7 @@
 import "./styles/jester-css.css";
 import "./styles/reset.css";
 import "./styles/styles.css";
-import { Home, Menu, About } from "./components/barrel-loader.js";
+import { Home, Menu, Contact } from "./components/barrel-loader.js";
 
 class UIController {
   constructor() {
@@ -9,7 +9,7 @@ class UIController {
 
     const homeButton = document.querySelector(".nav__button--home");
     const menuButton = document.querySelector(".nav__button--menu");
-    const aboutButton = document.querySelector(".nav__button--about");
+    const contactButton = document.querySelector(".nav__button--contact");
     const themeButton = document.querySelector(".nav__theme-button");
 
     homeButton.addEventListener("click", () => {
@@ -18,8 +18,8 @@ class UIController {
     menuButton.addEventListener("click", () => {
       this.#pageSwitch("menu");
     });
-    aboutButton.addEventListener("click", () => {
-      this.#pageSwitch("about");
+    contactButton.addEventListener("click", () => {
+      this.#pageSwitch("contact");
     });
     themeButton.addEventListener("click", () => {
       this.themeSwitch();
@@ -94,8 +94,8 @@ class UIController {
       case "menu":
         appendingFunc = Menu;
         break;
-      case "about":
-        appendingFunc = About;
+      case "contact":
+        appendingFunc = Contact;
         break;
       default:
         this.#consoleLog(`Page switch not found for: ${where}`);
@@ -133,7 +133,7 @@ class UIController {
 
 function main() {
   const ui = new UIController();
-  ui.setDefaultPage();
+  // ui.setDefaultPage();
   ui.setOldTheme();
 }
 

@@ -1,6 +1,4 @@
-import "./about.css"
-
-export default function aboutComponent() {
+export default function contactComponent() {
   const text = document.createElement("p");
 
   text.textContent = "i am YEEHAWWW about";

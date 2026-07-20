@@ -1,5 +1,3 @@
-import "./home.css";
-
 export default function homeComponent() {
   const text = document.createElement("p");
 

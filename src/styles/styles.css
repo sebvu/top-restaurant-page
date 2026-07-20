@@ -73,7 +73,7 @@ body {
   padding: 0.3rem 1rem;
 
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: inherit;
 
   border: 1px solid var(--text-color);
   border-radius: 15% / 50%;
@@ -135,16 +135,62 @@ body {
   grid-area: content;
   justify-self: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  gap: 6rem;
 
   width: clamp(1000px, 50vw, 600px);
-  padding: 1rem 3rem;
+  padding: 6rem 6rem 2rem;
+
+  color: var(--text-color);
+  background-color: var(--primary-color);
 
   border: 5px solid var(--accent-color);
   border-radius: 5% / 30%;
-  background-color: var(--primary-color);
-  box-shadow: 0 8px 12px black, inset 0 0 20px black;
+  box-shadow:
+    0 8px 12px black,
+    inset 0 0 20px black;
+}
+
+.content__header {
+  flex: none;
+  padding: 0.5rem 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+
+  background-color: var(--secondary-color);
+
+  box-shadow: 0 0 8px black;
+  border: 5px solid var(--accent-color);
+  border-radius: 5% / 50%;
+}
+
+.header__subtext {
+  font-size: calc(var(--size) * 0.5);
+}
+
+.content__main {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+}
+
+.main {
+  align-self: stretch;
+}
+
+.main__paragraph {
+  text-align: center;
 }
 
 /* ================ */
