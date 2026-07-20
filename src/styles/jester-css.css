@@ -192,22 +192,18 @@
   font-weight: normal;
 }
 
-._text._text--header-font,
-._text ._text--header-font {
+._text._text--header-font {
   --font-family: "Rampart One";
 }
 
-._text._text--normal-font,
-._text ._text--normal-font {
+._text._text--normal-font {
   --font-family: "Goudy Bookletter 1911";
 }
 
-._text._text--bold,
-._text ._text--bold {
+._text._text--bold {
   font-weight: bold;
 }
 
-._text._text--italic,
-._text ._text--italic {
+._text._text--italic {
   font-style: italic;
 }
