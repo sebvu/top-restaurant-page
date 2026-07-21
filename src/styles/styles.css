@@ -7,6 +7,10 @@ html {
 }
 
 body {
+  min-height: 100%;
+}
+
+body {
   display: grid;
   grid:
     "header" min-content
@@ -63,15 +67,14 @@ body {
 
   fill: var(--primary-color);
 
-  animation: pawWave 15s ease-out infinite;
-  animation-delay: 3s;
+  animation: pawWave 12s ease-out infinite;
 }
 
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .nav__button {
@@ -82,9 +85,15 @@ body {
 
   border: 1px solid var(--text-color);
   border-radius: 15% / 50%;
-  box-shadow: 3px 3px 5px var(--accent-color);
+  box-shadow: 0 0 3px 3px var(--accent-color);
 
   transition-duration: 0.2s;
+}
+
+.nav__button--selected {
+  transform: scale(1.1);
+
+  animation: selectedButtonGlow 3s ease-out infinite;
 }
 
 .nav__button:hover,
@@ -111,6 +120,15 @@ body {
   fill: var(--text-color);
 
   pointer-events: none;
+}
+
+@keyframes selectedButtonGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px 5px var(--accent-color);
+  }
+  50% {
+    box-shadow: 0 0 12px 8px var(--accent-color);
+  }
 }
 
 @keyframes pawWave {

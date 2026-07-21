@@ -7,21 +7,21 @@ class UIController {
   constructor() {
     /* initialize button handlers */
 
-    const homeButton = document.querySelector(".nav__button--home");
-    const menuButton = document.querySelector(".nav__button--menu");
-    const contactButton = document.querySelector(".nav__button--contact");
-    const themeButton = document.querySelector(".nav__theme-button");
+    this.#homeButton = document.querySelector(".nav__button--home");
+    this.#menuButton = document.querySelector(".nav__button--menu");
+    this.#contactButton = document.querySelector(".nav__button--contact");
+    this.#themeButton = document.querySelector(".nav__theme-button");
 
-    homeButton.addEventListener("click", () => {
+    this.#homeButton.addEventListener("click", () => {
       this.#pageSwitch("home");
     });
-    menuButton.addEventListener("click", () => {
+    this.#menuButton.addEventListener("click", () => {
       this.#pageSwitch("menu");
     });
-    contactButton.addEventListener("click", () => {
+    this.#contactButton.addEventListener("click", () => {
       this.#pageSwitch("contact");
     });
-    themeButton.addEventListener("click", () => {
+    this.#themeButton.addEventListener("click", () => {
       this.themeSwitch();
     });
   }
@@ -74,6 +74,10 @@ class UIController {
   /* === private === */
   #THEME_STORAGE_NAME = "theme";
   #currentPage = null;
+  #homeButton;
+  #menuButton;
+  #contactButton;
+  #themeButton;
 
   #consoleLog = (msg) => {
     console.log(`[UIController] ${msg}`);
@@ -109,10 +113,9 @@ class UIController {
     } else if (this.#currentPage === where) {
       this.#consoleLog("Page is already set! No action.");
     } else {
-      this.#currentPage = where;
       this.#consoleLog(`Switching to ${where}`);
       this.#clearContent();
-
+      /* add new content */
       const contentElArr = (() => {
         let arr = getContentElArrFunc();
         if (!Array.isArray(arr)) arr = [arr];
@@ -122,7 +125,30 @@ class UIController {
       for (const el of contentElArr) {
         content.appendChild(el);
       }
+      this.#currentPage = where;
+      this.#setSelectedButtonClass();
     }
+  };
+
+  #setSelectedButtonClass = () => {
+    const selectedButtonClass = "nav__button--selected";
+
+    /* ensure class is already removed before adding */
+    this.#homeButton.classList.remove(selectedButtonClass);
+    this.#menuButton.classList.remove(selectedButtonClass);
+    this.#contactButton.classList.remove(selectedButtonClass);
+
+    if (this.#currentPage === "home") {
+      this.#homeButton.classList.add(selectedButtonClass);
+    } else if (this.#currentPage === "menu") {
+      this.#menuButton.classList.add(selectedButtonClass);
+    } else if (this.#currentPage === "contact") {
+      this.#contactButton.classList.add(selectedButtonClass);
+    } else {
+      this.#consoleLog("No button has selected class.");
+      return;
+    }
+    this.#consoleLog(`${this.#currentPage} button now has selected class`);
   };
 
   #clearContent = () => {
