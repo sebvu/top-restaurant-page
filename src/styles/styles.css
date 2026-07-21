@@ -167,7 +167,7 @@ body {
   justify-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 3rem;
 
@@ -333,6 +333,7 @@ body {
     width: 80vw;
   }
 
+
   .main__container-outer {
     padding: 0.5rem;
     width: 70%;
@@ -347,6 +348,10 @@ body {
   #content {
     width: 90vw;
     padding: 2rem;
+  }
+
+  .main {
+    gap: 1rem;
   }
 }
 
