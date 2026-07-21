@@ -27,7 +27,7 @@ body {
 
 .body--bg-filter {
   transition-duration: 5s;
-  
+
   backdrop-filter: grayscale(70%);
   filter: brightness(70%);
 }
@@ -130,7 +130,8 @@ body {
 }
 
 @keyframes selectedButtonGlow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 5px 5px var(--accent-color);
   }
   50% {
@@ -313,4 +314,41 @@ body {
 
 #footer a:visited {
   color: var(--accent-color);
+}
+
+/* ================ */
+/* Basic Mobile Media Queries */
+/* ================ */
+
+@media (max-width: 1200px) {
+  :root {
+    --base-size: 0.6rem;
+  }
+
+  #header {
+    flex-direction: column;
+  }
+
+  #content {
+    width: 80vw;
+  }
+
+  .main__container-outer {
+    padding: 0.5rem;
+    width: 70%;
+  }
+
+  .main__container-inner {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #content {
+    width: 90vw;
+    padding: 2rem;
+  }
+}
+
+@media (max-height: 500px) {
 }
