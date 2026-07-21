@@ -107,6 +107,7 @@ export default new (class ElementLoader {
     DFSElements(rootNode);
 
     const elNodes = [...topEl[0].childNodes];
+    console.log(elNodes);
     this.#consoleLog(`Element creations is a success. Returning ${elNodes}`);
 
     return elNodes; /* return children elements of throwaway root node */

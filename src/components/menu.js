@@ -16,6 +16,7 @@ export default function menuComponent() {
         }),
       ],
     }),
+    Loader.newEl("hr", { classList: "content__hr" }),
   ]);
 
   return menuElements;

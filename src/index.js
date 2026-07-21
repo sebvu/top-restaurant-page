@@ -113,7 +113,11 @@ class UIController {
       this.#consoleLog(`Switching to ${where}`);
       this.#clearContent();
 
-      const contentElArr = getContentElArrFunc();
+      const contentElArr = (() => {
+        let arr = getContentElArrFunc();
+        if (!Array.isArray(arr)) arr = [arr];
+        return arr;
+      })();
 
       for (const el of contentElArr) {
         content.appendChild(el);
