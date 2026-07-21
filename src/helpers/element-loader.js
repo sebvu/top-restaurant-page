@@ -1,7 +1,7 @@
 /* instances to check prototype for valid type checks */
-function el(elementType, { id, classList, isES, children, text }) {
+function el(elementType, { id, classList, attrsList, isES, children, text }) {
   this.elementType = elementType;
-  this.opts = { id, classList, isES, children, text };
+  this.opts = { id, classList, attrsList, isES, children, text };
 }
 
 function textNode(msg) {
@@ -29,12 +29,20 @@ export default new (class ElementLoader {
     {
       id = null,
       classList = null,
+      attrsList = null,
       isES = false,
       children = [],
       text = null,
     } = {},
   ) => {
-    return new el(elementType, { id, classList, isES, children, text });
+    return new el(elementType, {
+      id,
+      classList,
+      attrsList,
+      isES,
+      children,
+      text,
+    });
   };
 
   newTextNode = (msg = "") => {
@@ -82,6 +90,11 @@ export default new (class ElementLoader {
         }
         if (n.opts.text !== null) {
           nEl.textContent = n.opts.text;
+        }
+        if (n.opts.attrsList !== null) {
+          for (const att in n.opts.attrsList) {
+            nEl.setAttribute(att, n.opts.attrsList[att]);
+          }
         }
 
         /* === WHERE TO PUSH === */
