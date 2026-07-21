@@ -2,8 +2,7 @@
 /* General Styling */
 /* ================ */
 
-html,
-body {
+html {
   height: 100%;
 }
 
@@ -40,6 +39,7 @@ body {
   color: var(--text-color);
 
   position: sticky;
+  z-index: 1;
   top: 0;
 }
 
@@ -146,7 +146,7 @@ body {
   gap: 3rem;
 
   width: clamp(1000px, 50vw, 600px);
-  padding: 6rem 6rem 2rem;
+  padding: 6rem;
 
   color: var(--text-color);
   background-color: var(--primary-color);

@@ -3,7 +3,7 @@ import { Loader } from "../exporter.js";
 export default function homeComponent() {
   const homeElements = Loader.loadElements([
     Loader.newEl("hgroup", {
-      classList: ["content__header", "header", "--context-md"],
+      classList: ["content__header", "header", "--context-lg"],
       children: [
         Loader.newEl("h1", {
           classList: ["header__text", "_text", "_text--header-font"],
@@ -18,7 +18,7 @@ export default function homeComponent() {
     }),
     Loader.newEl("hr", { classList: "content__hr" }),
     Loader.newEl("div", {
-      classList: ["content__main", "main", "--context-xxs"],
+      classList: ["content__main", "main", "--context-xs"],
       children: [
         /* greet paragraph */
         Loader.newEl("div", {
