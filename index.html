@@ -1,18 +1,101 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jester's Restaurant Page</title>
   <script defer src="main.js"></script></head>
   <body>
-    <header>
-      <nav>
-        <button>Home</button>
-        <button>Menu</button>
-        <button>About</button>
+    <header id="header">
+      <div class="header__item logo --context-xl">
+        <h1 class="logo__text _text _text--bold _text--header-font">
+          Pettito's
+        </h1>
+        <svg
+          class="logo__paw"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 48.839 48.839"
+          xml:space="preserve"
+        >
+          <g>
+            <path
+              d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252
+		c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373
+		c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742
+		c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181
+		C35.059,30.51,39.041,36.844,39.041,36.843z M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0
+		S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971
+		s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z M32.206,20.878
+		c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z
+		 M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414
+		S48.455,16.861,45.727,15.602z"
+            />
+          </g>
+        </svg>
+      </div>
+      <nav class="header__item nav --context-xs _text _text--normal-font">
+        <button class="nav__button nav__button--home">Home</button>
+        <button class="nav__button nav__button--menu">Menu</button>
+        <button class="nav__button nav__button--contact">Contact</button>
+        <button class="nav__theme-button">
+          <svg
+            class="nav__theme-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.5,2C5.71,3.15 4.5,5.18 4.5,7.5C4.5,9.82 5.71,11.85 7.53,13C4.46,13 2,10.54 2,7.5A5.5,5.5 0 0,1 7.5,2M19.07,3.5L20.5,4.93L4.93,20.5L3.5,19.07L19.07,3.5M12.89,5.93L11.41,5L9.97,6L10.39,4.3L9,3.24L10.75,3.12L11.33,1.47L12,3.1L13.73,3.13L12.38,4.26L12.89,5.93M9.59,9.54L8.43,8.81L7.31,9.59L7.65,8.27L6.56,7.44L7.92,7.35L8.37,6.06L8.88,7.33L10.24,7.36L9.19,8.23L9.59,9.54M19,13.5A5.5,5.5 0 0,1 13.5,19C12.28,19 11.15,18.6 10.24,17.93L17.93,10.24C18.6,11.15 19,12.28 19,13.5M14.6,20.08L17.37,18.93L17.13,22.28L14.6,20.08M18.93,17.38L20.08,14.61L22.28,17.15L18.93,17.38M20.08,12.42L18.94,9.64L22.28,9.88L20.08,12.42M9.63,18.93L12.4,20.08L9.87,22.27L9.63,18.93Z"
+            />
+          </svg>
+        </button>
       </nav>
     </header>
+    <!-------------------->
     <div id="content"></div>
+    <!-------------------->
+    <footer id="footer" class="_text _text--normal-font --context-xxs">
+      <p>
+        Created by
+        <a target="_blank" rel="noreferrer" href="https://github.com/sebvu"
+          >Sebvu</a
+        >
+        courtesy of
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.theodinproject.com/dashboard"
+          >TOP</a
+        >
+      </p>
+      <p>
+        Background Dog Bowl Image from
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.gettyimages.com/illustrations/feeding-dog-bowl"
+          >Getty Images</a
+        >
+      </p>
+      <p>
+        SVGs from
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://pictogrammers.com/library/mdi/"
+          >pictogrammers mdi</a
+        >
+      </p>
+      <p>
+        Menu Image From
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.redbubble.com/i/art-print/No-Humans-Allowed-by-McPod/77430291/wqnt"
+          >RedBubble</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
