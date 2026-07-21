@@ -85,24 +85,24 @@ class UIController {
 
   #pageSwitch = (where) => {
     const content = document.querySelector("#content");
-    let appendingFunc = null;
+    let getContentElArrFunc = null;
 
     switch (where.toLowerCase()) {
       case "home":
-        appendingFunc = Home;
+        getContentElArrFunc = Home;
         break;
       case "menu":
-        appendingFunc = Menu;
+        getContentElArrFunc = Menu;
         break;
       case "contact":
-        appendingFunc = Contact;
+        getContentElArrFunc = Contact;
         break;
       default:
         this.#consoleLog(`Page switch not found for: ${where}`);
         return;
     }
 
-    if (appendingFunc === null) {
+    if (getContentElArrFunc === null) {
       this.#throwErrorLog(
         `Appending func resulted in null value for: ${where}`,
       );
@@ -112,7 +112,12 @@ class UIController {
       this.#currentPage = where;
       this.#consoleLog(`Switching to ${where}`);
       this.#clearContent();
-      content.appendChild(appendingFunc());
+
+      const contentElArr = getContentElArrFunc();
+
+      for (const el of contentElArr) {
+        content.appendChild(el);
+      }
     }
   };
 
