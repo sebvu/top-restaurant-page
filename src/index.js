@@ -127,6 +127,7 @@ class UIController {
       }
       this.#currentPage = where;
       this.#setSelectedButtonClass();
+      this.#setBackgroundFilter();
     }
   };
 
@@ -149,6 +150,18 @@ class UIController {
       return;
     }
     this.#consoleLog(`${this.#currentPage} button now has selected class`);
+  };
+
+  #setBackgroundFilter = () => {
+    const body = document.body;
+
+    /* for menu, slowly filter to a grayscale */
+
+    if (this.#currentPage === "menu") {
+      body.classList.add("body--bg-filter");
+    } else {
+      body.classList.remove("body--bg-filter");
+    }
   };
 
   #clearContent = () => {

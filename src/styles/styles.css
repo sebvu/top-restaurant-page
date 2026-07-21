@@ -25,6 +25,13 @@ body {
   position: relative;
 }
 
+.body--bg-filter {
+  transition-duration: 5s;
+  
+  backdrop-filter: grayscale(70%);
+  filter: brightness(50%);
+}
+
 /* ================ */
 /* Header Styling */
 /* ================ */
