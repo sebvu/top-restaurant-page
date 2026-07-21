@@ -29,7 +29,7 @@ body {
   transition-duration: 5s;
   
   backdrop-filter: grayscale(70%);
-  filter: brightness(50%);
+  filter: brightness(70%);
 }
 
 /* ================ */
