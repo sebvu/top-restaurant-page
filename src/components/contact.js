@@ -45,7 +45,7 @@ export default function contactComponent() {
                     Loader.newEl("li", {
                       children: [
                         Loader.newEl("strong", { text: "Number:" }),
-                        Loader.newTextNode(" (888)-123-1236"),
+                        Loader.newTextNode(" (866)-123-1236"),
                       ],
                     }),
                     Loader.newEl("li", {
@@ -87,7 +87,7 @@ export default function contactComponent() {
                     Loader.newEl("li", {
                       children: [
                         Loader.newEl("strong", { text: "Number:" }),
-                        Loader.newTextNode(" (888)-123-1235"),
+                        Loader.newTextNode(" (866)-123-1235"),
                       ],
                     }),
                     Loader.newEl("li", {
@@ -129,7 +129,7 @@ export default function contactComponent() {
                     Loader.newEl("li", {
                       children: [
                         Loader.newEl("strong", { text: "Number:" }),
-                        Loader.newTextNode(" (888)-123-1234"),
+                        Loader.newTextNode(" (866)-123-1234"),
                       ],
                     }),
                     Loader.newEl("li", {
@@ -171,7 +171,7 @@ export default function contactComponent() {
                     Loader.newEl("li", {
                       children: [
                         Loader.newEl("strong", { text: "Number:" }),
-                        Loader.newTextNode(" (888)-000-0067"),
+                        Loader.newTextNode(" (866)-666-6001"),
                       ],
                     }),
                     Loader.newEl("li", {
