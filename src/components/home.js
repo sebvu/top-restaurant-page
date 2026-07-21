@@ -58,7 +58,7 @@ export default function homeComponent() {
             Loader.newEl("div", {
               classList: "main__container-inner",
               children: [
-                Loader.newEl("p", {
+                Loader.newEl("h2", {
                   classList: [
                     "main__container-header",
                     "_text",
@@ -85,7 +85,7 @@ export default function homeComponent() {
             Loader.newEl("div", {
               classList: "main__container-inner",
               children: [
-                Loader.newEl("p", {
+                Loader.newEl("h2", {
                   classList: [
                     "main__container-header",
                     "_text",

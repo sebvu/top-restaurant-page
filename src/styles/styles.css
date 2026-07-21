@@ -262,6 +262,27 @@ body {
   border-radius: 5% / 50%;
 }
 
+.main__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: auto;
+  width: 60%;
+
+  border-radius: 1rem;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 5px 5px black;
+
+  overflow: hidden;
+
+  aspect-ratio: 3 / 4;
+}
+
+.main__image {
+  object-fit: cover;
+}
+
 /* ================ */
 /* Footer Styling */
 /* ================ */

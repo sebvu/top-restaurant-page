@@ -168,7 +168,7 @@ class UIController {
 
 function main() {
   const ui = new UIController();
-  ui.setDefaultPage();
+  // ui.setDefaultPage();
   ui.setOldTheme();
 }
 
