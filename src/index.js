@@ -1,7 +1,7 @@
 import "./styles/jester-css.css";
 import "./styles/reset.css";
 import "./styles/styles.css";
-import { Home, Menu, Contact } from "./barrel-loader.js";
+import { Home, Menu, Contact } from "./exporter.js";
 
 class UIController {
   constructor() {

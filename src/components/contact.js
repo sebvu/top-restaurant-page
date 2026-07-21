@@ -1,3 +1,5 @@
+import { Loader } from "../exporter.js";
+
 export default function contactComponent() {
   const text = document.createElement("p");
 
