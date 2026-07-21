@@ -7,7 +7,7 @@ export default function homeComponent() {
       children: [
         Loader.newEl("h1", {
           classList: ["header__text", "_text", "_text--header-font"],
-          text: "Pettito's Supper Paradise",
+          text: "Pettito's Brunch Café",
         }),
         Loader.newEl("p", {
           classList: ["header__subtext", "_text", "_text--normal-font"],
